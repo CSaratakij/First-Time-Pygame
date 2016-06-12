@@ -3,6 +3,7 @@ my first time with a [pygame](http://www.pygame.org)
 
 ##Dependencies
 - pygame 1.9.2
+- python 3.5
 
 ##To run this app
 `python main.py`
