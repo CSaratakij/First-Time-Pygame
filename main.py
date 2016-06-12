@@ -58,7 +58,7 @@ class Game:
                     sys.exit()
 
             pygame.display.update()
-            self.__clock.tick(self.FPS)
+            self.__clock.tick(Game.FPS)
 
     def update_scene(self):
         SceneManager.handle()
