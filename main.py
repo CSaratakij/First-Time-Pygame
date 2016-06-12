@@ -237,7 +237,7 @@ class Animal:
         raise NotImplementedError("Please implement this method.")
 
 
-class Cat(Animal, GameObject):
+class Cat(GameObject, Animal):
 
     IMAGE_PATH = "assets/image/cat.jpg"
 
