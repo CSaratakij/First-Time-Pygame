@@ -230,7 +230,6 @@ class SpriteLoader:
 class Animal:
 
     def __init__(self):
-        super().__init__()
         self._max_move_offset = Vector2()
         self._direction = Direction.none
 
