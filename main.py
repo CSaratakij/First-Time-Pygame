@@ -13,7 +13,6 @@ class App:
     TITLE = "First-time with Pygame by CSaratakij"
 
     def __init__(self):
-        pygame.init()
         self.__game = Game(App.TITLE, App.WIDTH, App.HEIGHT)
 
     def start(self):
@@ -26,6 +25,7 @@ class Game:
     screen = None
 
     def __init__(self, title, width, height):
+        pygame.init()
         pygame.display.set_caption(title)
         self.__clock = pygame.time.Clock()
         Game.screen = pygame.display.set_mode([width, height])
