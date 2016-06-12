@@ -272,6 +272,7 @@ class Cat(Animal, GameObject):
 
 
 class Direction(Enum):
+
     none = 0,
     up = 1,
     down = 2,
