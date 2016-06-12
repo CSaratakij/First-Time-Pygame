@@ -1,6 +1,8 @@
 ##First-Time-Pygame
 my first time with a [pygame](http://www.pygame.org)
 
+![Meow...](screenshot/app.gif)
+
 ##Dependencies
 - pygame 1.9.2
 - python 3.5
