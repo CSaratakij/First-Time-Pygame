@@ -113,13 +113,10 @@ class Scene:
             obj.on_start()
 
     def update(self):
-        if (len(self.__gameObjects) > 0):
-            for obj in self.__gameObjects:
-                Game.clear_screen_with(self.__screen_color)
-                Game.screen.blit(obj.sprite.image, [obj.transform.position.x, obj.transform.position.y])
-                obj.on_update()
-        else:
-            Game.clear_screen_with(self.__screen_color)
+        Game.clear_screen_with(self.__screen_color)
+        for obj in self.__gameObjects:
+            Game.screen.blit(obj.sprite.image, [obj.transform.position.x, obj.transform.position.y])
+            obj.on_update()
 
 
 class SceneManager:
