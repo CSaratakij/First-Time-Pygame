@@ -113,10 +113,13 @@ class Scene:
             obj.on_start()
 
     def update(self):
-        for obj in self.__gameObjects:
+        if (len(self.__gameObjects) > 0):
+            for obj in self.__gameObjects:
+                Game.clear_screen_with(self.__screen_color)
+                Game.screen.blit(obj.sprite.image, [obj.transform.position.x, obj.transform.position.y])
+                obj.on_update()
+        else:
             Game.clear_screen_with(self.__screen_color)
-            Game.screen.blit(obj.sprite.image, [obj.transform.position.x, obj.transform.position.y])
-            obj.on_update()
 
 
 class SceneManager:
@@ -124,6 +127,7 @@ class SceneManager:
     scenes = []
     current_scene = 0
     previous_scene = 0
+    is_changing_scene = False
 
     def add_scene(scenes):
         SceneManager.scenes += scenes
@@ -142,13 +146,15 @@ class SceneManager:
         SceneManager.scenes[SceneManager.current_scene].update()
 
     def handle():
-        if SceneManager.previous_scene != SceneManager.current_scene:
+        if SceneManager.is_changing_scene:
             SceneManager.re_init_scene()
-            SceneManager.previous_scene = SceneManager.current_scene
+            SceneManager.is_changing_scene = False
         SceneManager.update()
 
     def change_scene(index):
+        SceneManager.previous_scene = SceneManager.current_scene
         SceneManager.current_scene = index
+        SceneManager.is_changing_scene = True
 
 
 class GameObject(IScriptable):
