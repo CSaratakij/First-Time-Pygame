@@ -97,7 +97,7 @@ class Game:
             fps = round(self.__clock.get_fps())
             fps_label = "FPS : " + str(fps)
             fps_font = pygame.font.SysFont("monospace", 15)
-            fps_surface = fps_font.render(fps_label, 1, Color.YELLOW)
+            fps_surface = fps_font.render(fps_label, True, Color.YELLOW)
             Game.screen.blit(fps_surface, [0, 0])
 
 
